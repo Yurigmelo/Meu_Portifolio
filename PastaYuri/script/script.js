@@ -48,3 +48,31 @@ if (AGORA > DATA_FORMATURA) {
 
 document.getElementById("tempoRestanteParaFormatura").innerText = mensagemTempoRestante;
 
+// Botão modo claro/escuro
+const botaoModo = document.getElementById('modoEscuroClaro');
+
+botaoModo.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    
+    // Atualizar texto do botão
+    if (document.body.classList.contains('dark-mode')) {
+        botaoModo.textContent = 'Modo Claro';
+        localStorage.setItem('modo', 'escuro');
+    } else {
+        botaoModo.textContent = 'Modo Escuro';
+        localStorage.setItem('modo', 'claro');
+    }
+});
+
+// Carregar modo salvo
+window.addEventListener('load', () => {
+    const modoSalvo = localStorage.getItem('modo');
+    if (modoSalvo === 'escuro') {
+        document.body.classList.add('dark-mode');
+        botaoModo.textContent = 'Modo Claro';
+    } else {
+        botaoModo.textContent = 'Modo Escuro';
+    }
+});
+
+
