@@ -75,4 +75,27 @@ window.addEventListener('load', () => {
     }
 });
 
+let fruta = [/*0*/"maçä",/*1*/ "banana", /*2*/ "laranja", /*3*/ "uva"]; //indices comecam no 0.
 
+console.log(fruta. length); // Quantidade de itens no array
+
+fruta.push("abacaxi"); // Adiciona um item no final do array
+
+fruta.unshift("morango");
+
+fruta.shift(); // Remove o primeiro item do array
+
+fruta.pop(); // Remove o último item do array
+
+console.log(fruta.index0f("abacaxi")); // Retorna o indice do item, ou -1 se nă
+
+fruta.splice(2, 1); //Remove 1 item a partir do indice 2
+fruta.splice(3,0,"melancia","maça verde","kiwi"); // Adiciona itens a partir do indice 3, sem remover nenhum item
+
+console.log(fruta);
+
+
+
+fruta.forEach(function(item) {
+    console.log(item);
+}); // Itera sobre cada item do array e executa a função para cada um
