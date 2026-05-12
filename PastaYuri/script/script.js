@@ -14,22 +14,11 @@ let mesAtual = DATAATUAL.getMonth() + 1; // Mês atual (0-11, por isso +1)
 let anoAtual = DATAATUAL.getFullYear(); // Ano atual
 let diaAtual = DATAATUAL.getDate(); // Dia atual
 
-let indefinido;
-let nulo = null;
-
 let curso = {
     nome: "Sistemas de Informação",
     semestre: 3,
     disciplinaAtual: "Design focado no usuário"
 };
-
-console.log(typeof nulo); 
-console.log(typeof indefinido);
-console.log(typeof anoFormatura);
-console.log(typeof minhaBio);
-console.log(typeof tituloProfissional);
-console.log(typeof NOME);    
-console.log(typeof curso);
 
 document.getElementById("meuNome").innerText = NOME;
 document.getElementById("tituloProfissional").innerText = tituloProfissional;
@@ -75,27 +64,28 @@ window.addEventListener('load', () => {
     }
 });
 
-let fruta = [/*0*/"maçä",/*1*/ "banana", /*2*/ "laranja", /*3*/ "uva"]; //indices comecam no 0.
 
-console.log(fruta. length); // Quantidade de itens no array
+let projetos = [
 
-fruta.push("abacaxi"); // Adiciona um item no final do array
+    //objeto de index 0 do arrey de objetos
+    {nome: "aplicaçoes de estacionamento",
+    tecnologias: "HTML, CSS, JavaScript",
+    conhecimentos: "Desenvolvimento de uma aplicação de estacionamento utilizando HTML, CSS e JavaScript. O projeto inclui funcionalidades como cadastro de veículos, controle de entrada e saída, cálculo de tempo e valor a ser pago, além de uma interface amigável para os usuários.",
+    descricao: "Desenvolvimento de uma aplicação de estacionamento utilizando HTML, CSS e JavaScript. O projeto inclui funcionalidades como cadastro de veículos, controle de entrada e saída, cálculo de tempo e valor a ser pago, além de uma interface amigável para os usuários."
+    },
 
-fruta.unshift("morango");
+    {nome: "aplicaçoes de calculadora",
+    tecnologias: "HTML, CSS, JavaScript",
+    conhecimentos: "Desenvolvimento de uma aplicação de calculadora utilizando HTML, CSS e JavaScript. O projeto inclui funcionalidades como operações matemáticas básicas (adição, subtração, multiplicação e divisão), interface intuitiva e responsiva para os usuários.",
+    descricao: "Desenvolvimento de uma aplicação de calculadora utilizando HTML, CSS e JavaScript. O projeto inclui funcionalidades como operações matemáticas básicas (adição, subtração, multiplicação e divisão), interface intuitiva e responsiva para os usuários."
+    },  
+]
 
-fruta.shift(); // Remove o primeiro item do array
-
-fruta.pop(); // Remove o último item do array
-
-console.log(fruta.index0f("abacaxi")); // Retorna o indice do item, ou -1 se nă
-
-fruta.splice(2, 1); //Remove 1 item a partir do indice 2
-fruta.splice(3,0,"melancia","maça verde","kiwi"); // Adiciona itens a partir do indice 3, sem remover nenhum item
-
-console.log(fruta);
-
-
-
-fruta.forEach(function(item) {
-    console.log(item);
-}); // Itera sobre cada item do array e executa a função para cada um
+const conteiner = document.getElementById('conteinerProjetos');
+if (conteiner) {
+    conteiner.innerHTML += "<h2>" + projetos[0].nome + "</h2>";
+    conteiner.innerHTML += "<h2>" + projetos[1].nome + "</h2>";
+    conteiner.innerHTML += "<h2>" + projetos[0].descricao + "</h2>";
+} else {
+    console.error('Elemento com id "conteinerProjetos" não encontrado.');
+}
